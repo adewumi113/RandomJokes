@@ -1,6 +1,10 @@
-document.querySelector("button").addEventListener('click', getjokes)
+document.querySelector("form").addEventListener('submit', getjokes)
 
-function getjokes(){
+function getjokes(e){
+  e.preventDefault();
+  document.querySelector('h2').innerText = '';
+  document.querySelector('h3').innerText = '';
+  document.querySelector('h4').innerText = '';
   fetch("https://v2.jokeapi.dev/joke/Any")
     .then(res => res.json()) // parse response as JSON
     .then(data => {
@@ -11,13 +15,9 @@ function getjokes(){
         document.querySelector('h3').innerText = data.delivery
       }else if(data.type === 'single'){
         document.querySelector('h2').innerText = data.joke
-        document.querySelector('h3').innerText = data.delivery
       }
-    
-      
     })
     .catch(err => {
         console.log(`error ${err}`)
     }); 
 }
-
