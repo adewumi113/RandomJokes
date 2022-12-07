@@ -1,0 +1,29 @@
+html{
+    font-size: 62.5%
+ }
+
+
+ h1{
+    color: rgb(244, 178, 9);
+    font-size: 4em;
+    font-family: cursive;
+    animation: glow 1s ease-in-out infinite alternate;
+ }
+ 
+ @keyframes glow {
+    from {
+      text-shadow: 0 0 20px goldenrod
+    }
+    to{
+        text-shadow: 0 0 30px goldenrod
+                    0 0 10px goldenrod
+    }
+}
+
+.bab{
+    font-size: large;
+}
+
+h4,h3 {
+    color: rgb(37, 4, 248);
+}
